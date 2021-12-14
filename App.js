@@ -8,6 +8,7 @@ import { View, Text } from 'react-native';
 import ShoppingScreen from './components/ShoppingScreen';
 import CalculatorScreen from './components/CalculatorScreen';
 import MapScreen from './components/MapScreen';
+import RestaurantScreen from './components/RestaurantScreen';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -27,6 +28,8 @@ export default function App() {
             iconName = 'md-calculator';
           } else if (route.name === 'Map') {
             iconName = 'md-map';
+          } else if (route.name === 'Restaurants') {
+            iconName = 'md-map';
           }
       return <Ionicons name={iconName} size={size} color={color} />; 
     },
@@ -34,7 +37,7 @@ export default function App() {
       <Tab.Screen name="Shopping List" component={ShoppingScreen} />
       <Tab.Screen name="Calculator" component={CalculatorScreen} />
       <Tab.Screen name="Map" component={MapScreen} />
-
+      <Tab.Screen name="Restaurants" component={RestaurantScreen} />
       </Tab.Navigator>
     </NavigationContainer>
   );
