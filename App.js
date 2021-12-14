@@ -7,7 +7,9 @@ import { View, Text } from 'react-native';
 
 import ShoppingScreen from './components/ShoppingScreen';
 import CalculatorScreen from './components/CalculatorScreen';
+import DiscountScreen from './components/DiscountScreen';
 import MapScreen from './components/MapScreen';
+import DistanceScreen from './components/DistanceScreen';
 import RestaurantScreen from './components/RestaurantScreen';
 
 const Stack = createNativeStackNavigator();
@@ -18,7 +20,7 @@ export default function App() {
     <NavigationContainer>
       <Tab.Navigator
         screenOptions={({route}) => ({ 
-        tabBarIcon: ({ focused, color, size }) => { 
+        tabBarIcon: ({focused, color, size}) => { 
 
           let iconName;
 
@@ -26,18 +28,24 @@ export default function App() {
             iconName = 'md-list';
           } else if (route.name === 'Calculator') {
             iconName = 'md-calculator';
+          } else if (route.name === 'Discount') {
+            iconName = 'aperture-outline';
           } else if (route.name === 'Map') {
             iconName = 'md-map';
+          } else if (route.name === 'Distance') {
+            iconName = 'flag-outline';
           } else if (route.name === 'Restaurants') {
-            iconName = 'md-map';
-          }
-      return <Ionicons name={iconName} size={size} color={color} />; 
-    },
-    })}>
-      <Tab.Screen name="Shopping List" component={ShoppingScreen} />
-      <Tab.Screen name="Calculator" component={CalculatorScreen} />
-      <Tab.Screen name="Map" component={MapScreen} />
-      <Tab.Screen name="Restaurants" component={RestaurantScreen} />
+            iconName = 'fast-food-outline';
+          } 
+          return <Ionicons name={iconName} size={size} color={color} />; 
+          },
+        })}>
+        <Tab.Screen name="Shopping List" component={ShoppingScreen} />
+        <Tab.Screen name="Calculator" component={CalculatorScreen} />
+        <Tab.Screen name="Discount" component={DiscountScreen} />      
+        <Tab.Screen name="Map" component={MapScreen} />
+        <Tab.Screen name="Distance" component={DistanceScreen} />       
+        <Tab.Screen name="Restaurants" component={RestaurantScreen} />
       </Tab.Navigator>
     </NavigationContainer>
   );
