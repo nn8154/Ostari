@@ -27,6 +27,8 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "App Ostari: Shopping List, Calculator, Discount, Maps",
+    "githubUrl": "https://github.com/nn8154/Ostari.git"
   }
 }

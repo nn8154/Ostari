@@ -11,6 +11,7 @@ import DiscountScreen from './components/DiscountScreen';
 import MapScreen from './components/MapScreen';
 import DistanceScreen from './components/DistanceScreen';
 import RestaurantScreen from './components/RestaurantScreen';
+import AppleScreen from './components/AppleScreen';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -36,6 +37,8 @@ export default function App() {
             iconName = 'flag-outline';
           } else if (route.name === 'Restaurants') {
             iconName = 'fast-food-outline';
+          } else if (route.name === 'Apple') {
+            iconName = 'nutrition-outline';
           } 
           return <Ionicons name={iconName} size={size} color={color} />; 
           },
@@ -46,6 +49,7 @@ export default function App() {
         <Tab.Screen name="Map" component={MapScreen} />
         <Tab.Screen name="Distance" component={DistanceScreen} />       
         <Tab.Screen name="Restaurants" component={RestaurantScreen} />
+        <Tab.Screen name="Apple" component={AppleScreen} />
       </Tab.Navigator>
     </NavigationContainer>
   );
